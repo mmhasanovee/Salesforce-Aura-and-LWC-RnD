@@ -1,0 +1,9 @@
+<aura:component>
+    <aura:attribute name="truthy" default="false" type="Boolean" />
+    <aura:if isTrue="{!v.truthy}">
+        True
+        <aura:set attribute="else">
+            False
+        </aura:set>
+    </aura:if>
+</aura:component>

@@ -27,5 +27,7 @@
 
     <!-- <c:CustomModal /> -->
     <!-- <c:DynamicCreateComponets /> -->
-    <c:CustomLookup objName="Contact" />
+    <!-- <c:CustomLookup objName="Contact" /> -->
+    <!-- <c:DataTable /> -->
+    <c:XdApp />
 </aura:application>

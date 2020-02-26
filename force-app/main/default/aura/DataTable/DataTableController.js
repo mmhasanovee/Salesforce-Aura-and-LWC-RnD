@@ -30,7 +30,16 @@
         $A.enqueueAction(action);
     },
     doSelectRecord: function (component, event, helper) {
-        var selectedRows = event.getParam('selectedRows');
+        var selectedRows = event.getParam('selectedRows'); //selectedrows is a built in attribute which should return all the properties of the rows.
+        var show = 'slds-p-around_small';
+        var hide = 'slds-hide';
+        if (selectedRows.length != 0) {
+            component.set('v.hide', show);
+            component.set('v.selected', selectedRows);
+        }
+        else {
+            component.set('v.hide', hide)
+        }
         console.log('selectedRows ', selectedRows);
     },
     handleRowAction: function (component, event, helper) {
@@ -63,5 +72,30 @@
             alert(draftRecords[i].id + '  Id = ' + id.substring(4, id.length));
             console.log(data[id.substring(4, id.length)]);
         }
+    },
+
+    doDelete: function (component, event, helper) {
+        var idToDelete = component.get('v.selected'); //getting one id only for deleting.
+
+        var action = component.get('c.batchDeleteRecord');
+
+        action.setParams({
+
+            mewmew: idToDelete
+        });
+        action.setCallback(this, function (response) {
+            var state = response.getState();
+            //alert(state);
+            if (state === 'SUCCESS' || state === 'DRAFT') {
+
+                console.log('Deleted Successfully');
+
+            }
+        });
+
+        $A.enqueueAction(action);
+
+        //console.log('idToDelete', idToDelete);
+
     }
 })
