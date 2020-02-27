@@ -10,7 +10,7 @@
                      required="true"/>
     
     The Output is: {!v.output} <br/>
-    
+    {!v.input1}
     <lightning:button variant="brand" label="Add" onclick="{!c.doAdd}"/>
     <lightning:button variant="brand" label="Sub" onclick="{!c.doSub}"/>
     <lightning:button variant="brand" label="Mul" onclick="{!c.doMul}"/>

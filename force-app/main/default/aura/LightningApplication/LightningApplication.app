@@ -29,5 +29,7 @@
     <!-- <c:DynamicCreateComponets /> -->
     <!-- <c:CustomLookup objName="Contact" /> -->
     <!-- <c:DataTable /> -->
-    <c:XdApp />
+    <!-- <c:XdApp /> -->
+    <!-- <c:CalculatorUtility /> -->
+    <c:DigitalClock />
 </aura:application>
