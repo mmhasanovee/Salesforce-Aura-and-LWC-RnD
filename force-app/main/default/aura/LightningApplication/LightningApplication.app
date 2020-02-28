@@ -32,5 +32,6 @@
     <!-- <c:XdApp /> -->
     <!-- <c:CalculatorUtility /> -->
     <!-- <c:DigitalClock /> -->
-    <c:CustomTable />
+    <!-- <c:CustomTable /> -->
+    <c:infinityLoading />
 </aura:application>

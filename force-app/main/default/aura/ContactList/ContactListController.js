@@ -10,7 +10,7 @@
         //
         //Stemp 2, though optional
 
-        alert(component.get('v.recordId'));
+        //alert(component.get('v.recordId'));
         action.setParams({
 
             accountId: component.get('v.recordId'),

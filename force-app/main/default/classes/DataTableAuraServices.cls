@@ -1,7 +1,7 @@
 public class DataTableAuraServices {
 	@AuraEnabled
     public static List<Account> fetchAccount(){
-        return [Select Id, Name, Rating, Industry, Phone from Account Limit 5];
+        return [Select Id, Name, Rating, Industry, Phone from Account Limit 10];
     }
 
     @AuraEnabled
@@ -14,6 +14,16 @@ public class DataTableAuraServices {
     public static void batchDeleteRecord(List<Account> mewmew){
         
         delete mewmew;
+    }
+
+    @AuraEnabled
+    public static void batchDeleteRecordFromCustomTableCmp(List<String> listOfIds){
+        
+        //delete listOfIds;
+
+        List < Account > lstDeleteRec = [select Id from Account where id IN: listOfIds];
+
+        delete lstDeleteRec;
     }
 
     

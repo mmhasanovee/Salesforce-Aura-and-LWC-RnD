@@ -75,7 +75,7 @@
     },
 
     doDelete: function (component, event, helper) {
-        var idToDelete = component.get('v.selected'); //getting one id only for deleting.
+        var idToDelete = component.get('v.selected'); //getting ids only for deleting.
 
         var action = component.get('c.batchDeleteRecord');
 

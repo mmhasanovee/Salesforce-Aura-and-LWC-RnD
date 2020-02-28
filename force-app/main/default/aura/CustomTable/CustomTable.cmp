@@ -1,21 +1,30 @@
 <aura:component controller="DataTableAuraServices">
-
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:attribute name="accountList" type="Account" />
-    <table id="customers">
-        <tr>
-            <th>Account Name</th>
-            <th>Industry</th>
-            <th>Rating</th>
-            <th>Phone</th>
-        </tr>
-        <aura:iteration items="{!v.accountList}" var="acc">
+    <aura:attribute name="idToDelete" type="List" />
+
+    <div id="customers">
+        <table>
             <tr>
-                <td>{!acc.Name}</td>
-                <td>{!acc.Industry}</td>
-                <td>{!acc.Rating}</td>
-                <td>{!acc.Phone}</td>
+                <th>Check Box</th>
+                <th>Account Name</th>
+                <th>Industry</th>
+                <th>Rating</th>
+                <th>Phone</th>
             </tr>
-        </aura:iteration>
-    </table>
+            <aura:iteration items="{!v.accountList}" var="acc">
+                <tr>
+                    &nbsp;&nbsp;
+                    <ui:inputCheckbox name="{!acc.Id}" label="" change="{!c.onCheck}" />
+                    <td>{!acc.Name}</td>
+                    <td>{!acc.Industry}</td>
+                    <td>{!acc.Rating}</td>
+                    <td>{!acc.Phone}</td>
+                </tr>
+            </aura:iteration>
+        </table>
+    </div>
+
+
+    <div><button class="gradient-button-1" type="button" onclick="{!c.doDelete}">Delete</button></div>
 </aura:component>
