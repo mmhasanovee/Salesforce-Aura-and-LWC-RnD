@@ -1,7 +1,7 @@
 public class DataTableAuraServices {
 	@AuraEnabled
     public static List<Account> fetchAccount(){
-        return [Select Id, Name, Rating, Industry, Phone from Account Limit 10];
+        return [Select Id, Name, Rating, Industry, Phone from Account Limit 8];
     }
 
     @AuraEnabled
@@ -25,6 +25,12 @@ public class DataTableAuraServices {
 
         delete lstDeleteRec;
     }
+
+    @AuraEnabled
+   public static List<Account> getAccountList(Integer dLimit,Integer dOffset){
+    List<Account> accountList=new List<Account>([Select Id, Name, Rating, Industry, Phone from Account limit :dLimit offset :dOffset]);
+    return accountList;
+}
 
     
 

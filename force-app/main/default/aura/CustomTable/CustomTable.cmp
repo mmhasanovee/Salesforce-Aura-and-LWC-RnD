@@ -2,8 +2,10 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     <aura:attribute name="accountList" type="Account" />
     <aura:attribute name="idToDelete" type="List" />
+    <aura:attribute name="isLoading" type="Boolean" default="false" />
+    <aura:attribute name="dataOffset" type="Integer" default="5" />
 
-    <div id="customers">
+    <div style="height: 300px;overflow:auto;overflow-x:hidden;" id="customers" onscroll="{!c.onScrollX}">
         <table>
             <tr>
                 <th>Check Box</th>
@@ -24,7 +26,6 @@
             </aura:iteration>
         </table>
     </div>
-
 
     <div><button class="gradient-button-1" type="button" onclick="{!c.doDelete}">Delete</button></div>
 </aura:component>
